@@ -10,12 +10,11 @@ type Fuzzy struct {
 	syllables map[string]uint64
 }
 
-func New() *Fuzzy {
-	fuzzy := Fuzzy{
+func New() Fuzzy {
+	return Fuzzy{
 		words:     make([]string, 0, 64),
 		syllables: make(map[string]uint64),
 	}
-	return &fuzzy
 }
 
 func (fuzzy *Fuzzy) Add(word string) error {
